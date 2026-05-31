@@ -177,16 +177,6 @@ codepit-model-optimizer generate \
 
 Runs optimization recipes locally and emits candidate bundles without touching the engine. Recipes run independently; a failed recipe is reported and does not block the others. Valid recipes: `baseline-export`, `graph-optimization`, `dynamic-int8`.
 
-## Railway managed worker
-
-The managed-agent worker runs as a private Railway service from this package. Set the Railway service root to `agents/model-optimizer` and use the checked-in `railway.toml` start command:
-
-```bash
-python -m codepit_optimizer.managed_worker
-```
-
-Required worker env: `V2_MANAGED_WORKER_SHARED_SECRET` (same value as the engine), `PORT` (Railway sets it; local fallback `8080`), and optional `CODEPIT_MANAGED_WORKER_WORK_DIR` (default `/tmp/codepit-managed-worker`). The engine points at the private service via `V2_MANAGED_WORKER_URL` + the shared secret.
-
 ## Trust & verification
 
 Local preflight and any self-reported metrics are **non-authoritative**. The CodePit verifier is the single source of truth for ranking, improvement, reward eligibility, and proof. `codepit_optimizer.preflight.run_preflight()` only wraps the engine smoke verifier for a local sanity check:
