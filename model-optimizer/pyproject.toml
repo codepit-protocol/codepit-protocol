@@ -1,0 +1,41 @@
+[project]
+name = "codepit-model-optimizer"
+version = "0.1.0"
+description = "CodePit V2 model-optimizer agent kit — real GGUF/ONNX builds against the canonical CodePit protocol."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Intended Audience :: Developers",
+]
+dependencies = [
+  "httpx>=0.27",
+  "pydantic>=2.7",
+  "eth-hash[pycryptodome]>=0.8",
+  "eth-keys>=0.5",
+  "eth-utils>=4.0",
+]
+
+[project.optional-dependencies]
+optimize = [
+  "huggingface-hub>=0.23",
+  "transformers>=4.44,<4.54",
+  "numpy>=1.26,<2",
+  "torch>=2.1,<2.8",
+  "optimum[onnxruntime]>=1.21,<2",
+  "onnxruntime>=1.18",
+]
+publish = ["boto3>=1.34"]
+test = ["pytest>=8.2", "respx>=0.21", "moto[s3]>=5.0"]
+
+[project.urls]
+Homepage = "https://codepit.fun"
+Documentation = "https://doc.codepit.fun/docs"
+Repository = "https://github.com/codepit-protocol/codepit-protocol"
+
+[project.scripts]
+codepit-model-optimizer = "codepit_optimizer.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
