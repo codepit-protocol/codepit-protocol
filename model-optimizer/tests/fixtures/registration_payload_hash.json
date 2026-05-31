@@ -1,0 +1,184 @@
+[
+  {
+    "name": "minimal_capabilities",
+    "payload": {
+      "protocol_version": "v1",
+      "agent_signer_address": "0xAbC0000000000000000000000000000000000001",
+      "agent": {
+        "display_name": "alpha",
+        "mode": "external"
+      },
+      "capabilities": {
+        "declared_model_classes": [
+          "encoder-text-small"
+        ],
+        "declared_artifact_lanes": [
+          "onnx-browser-webgpu"
+        ],
+        "declared_runtimes": [
+          "onnxruntime-web-webgpu"
+        ],
+        "optimization_methods": [
+          "graph-optimization"
+        ],
+        "declared_at_version": "v1"
+      }
+    },
+    "canonical": "{\"agent\":{\"display_name\":\"alpha\",\"mode\":\"external\"},\"agent_signer_address\":\"0xabc0000000000000000000000000000000000001\",\"capabilities\":{\"declared_artifact_lanes\":[\"onnx-browser-webgpu\"],\"declared_at_version\":\"v1\",\"declared_model_classes\":[\"encoder-text-small\"],\"declared_runtimes\":[\"onnxruntime-web-webgpu\"],\"optimization_methods\":[\"graph-optimization\"]},\"protocol_version\":\"v1\"}",
+    "hash": "sha256:e4f2a68bdb57de9c37f9e62400d490eca35e1dee40d4ab599e74bc1e87eefb42"
+  },
+  {
+    "name": "lowercase_signer_already",
+    "payload": {
+      "protocol_version": "v1",
+      "agent_signer_address": "0xabc0000000000000000000000000000000000001",
+      "agent": {
+        "display_name": "alpha",
+        "mode": "external"
+      },
+      "capabilities": {
+        "declared_model_classes": [
+          "encoder-text-small"
+        ],
+        "declared_artifact_lanes": [
+          "onnx-browser-webgpu"
+        ],
+        "declared_runtimes": [
+          "onnxruntime-web-webgpu"
+        ],
+        "optimization_methods": [
+          "graph-optimization"
+        ],
+        "declared_at_version": "v1"
+      }
+    },
+    "canonical": "{\"agent\":{\"display_name\":\"alpha\",\"mode\":\"external\"},\"agent_signer_address\":\"0xabc0000000000000000000000000000000000001\",\"capabilities\":{\"declared_artifact_lanes\":[\"onnx-browser-webgpu\"],\"declared_at_version\":\"v1\",\"declared_model_classes\":[\"encoder-text-small\"],\"declared_runtimes\":[\"onnxruntime-web-webgpu\"],\"optimization_methods\":[\"graph-optimization\"]},\"protocol_version\":\"v1\"}",
+    "hash": "sha256:e4f2a68bdb57de9c37f9e62400d490eca35e1dee40d4ab599e74bc1e87eefb42"
+  },
+  {
+    "name": "with_declared_limits",
+    "payload": {
+      "protocol_version": "v1",
+      "agent_signer_address": "0xDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF",
+      "agent": {
+        "display_name": "limit-bearer",
+        "mode": "external"
+      },
+      "capabilities": {
+        "declared_model_classes": [
+          "encoder-text-small"
+        ],
+        "declared_artifact_lanes": [
+          "onnx-browser-webgpu"
+        ],
+        "declared_runtimes": [
+          "onnxruntime-web-webgpu"
+        ],
+        "optimization_methods": [
+          "dynamic-int8",
+          "graph-optimization"
+        ],
+        "declared_at_version": "v1",
+        "declared_limits": {
+          "max_concurrent_submissions": 1,
+          "max_artifact_size_bytes": 200000000
+        }
+      }
+    },
+    "canonical": "{\"agent\":{\"display_name\":\"limit-bearer\",\"mode\":\"external\"},\"agent_signer_address\":\"0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef\",\"capabilities\":{\"declared_artifact_lanes\":[\"onnx-browser-webgpu\"],\"declared_at_version\":\"v1\",\"declared_limits\":{\"max_artifact_size_bytes\":200000000,\"max_concurrent_submissions\":1},\"declared_model_classes\":[\"encoder-text-small\"],\"declared_runtimes\":[\"onnxruntime-web-webgpu\"],\"optimization_methods\":[\"dynamic-int8\",\"graph-optimization\"]},\"protocol_version\":\"v1\"}",
+    "hash": "sha256:ba30b3d57e8e2eaf9269cd7783b6949744ac9846aa78b6eb94f8b261eaed9988"
+  },
+  {
+    "name": "preserves_array_order",
+    "payload": {
+      "protocol_version": "v1",
+      "agent_signer_address": "0x1234567890abcdef1234567890abcdef12345678",
+      "agent": {
+        "display_name": "order-matters",
+        "mode": "external"
+      },
+      "capabilities": {
+        "declared_model_classes": [
+          "encoder-text-small"
+        ],
+        "declared_artifact_lanes": [
+          "onnx-browser-webgpu"
+        ],
+        "declared_runtimes": [
+          "onnxruntime-web-webgpu"
+        ],
+        "optimization_methods": [
+          "graph-optimization",
+          "dynamic-int8",
+          "baseline-export"
+        ],
+        "declared_at_version": "v1"
+      }
+    },
+    "canonical": "{\"agent\":{\"display_name\":\"order-matters\",\"mode\":\"external\"},\"agent_signer_address\":\"0x1234567890abcdef1234567890abcdef12345678\",\"capabilities\":{\"declared_artifact_lanes\":[\"onnx-browser-webgpu\"],\"declared_at_version\":\"v1\",\"declared_model_classes\":[\"encoder-text-small\"],\"declared_runtimes\":[\"onnxruntime-web-webgpu\"],\"optimization_methods\":[\"graph-optimization\",\"dynamic-int8\",\"baseline-export\"]},\"protocol_version\":\"v1\"}",
+    "hash": "sha256:abef57d844d596f98a5a1141442d9583efbd5ad7cba31800670c97c88a97dbbf"
+  },
+  {
+    "name": "managed_mode_payload",
+    "payload": {
+      "protocol_version": "v1",
+      "agent_signer_address": "0xCAFEBABECAFEBABECAFEBABECAFEBABECAFEBABE",
+      "agent": {
+        "display_name": "managed-one",
+        "mode": "managed"
+      },
+      "capabilities": {
+        "declared_model_classes": [
+          "encoder-text-small"
+        ],
+        "declared_artifact_lanes": [
+          "onnx-browser-webgpu"
+        ],
+        "declared_runtimes": [
+          "onnxruntime-web-webgpu"
+        ],
+        "optimization_methods": [
+          "graph-optimization"
+        ],
+        "declared_at_version": "v1"
+      }
+    },
+    "canonical": "{\"agent\":{\"display_name\":\"managed-one\",\"mode\":\"managed\"},\"agent_signer_address\":\"0xcafebabecafebabecafebabecafebabecafebabe\",\"capabilities\":{\"declared_artifact_lanes\":[\"onnx-browser-webgpu\"],\"declared_at_version\":\"v1\",\"declared_model_classes\":[\"encoder-text-small\"],\"declared_runtimes\":[\"onnxruntime-web-webgpu\"],\"optimization_methods\":[\"graph-optimization\"]},\"protocol_version\":\"v1\"}",
+    "hash": "sha256:293aedd0769e16dfd5f2288646cbdd637879494f7346229047112c3972a2f01f"
+  },
+  {
+    "name": "with_agent_wallet",
+    "payload": {
+      "protocol_version": "v1",
+      "agent_signer_address": "0xAbC0000000000000000000000000000000000001",
+      "agent": {
+        "display_name": "wallet-alpha",
+        "mode": "external"
+      },
+      "capabilities": {
+        "declared_model_classes": [
+          "encoder-text-small"
+        ],
+        "declared_artifact_lanes": [
+          "onnx-browser-webgpu"
+        ],
+        "declared_runtimes": [
+          "onnxruntime-web-webgpu"
+        ],
+        "optimization_methods": [
+          "graph-optimization"
+        ],
+        "declared_at_version": "v1"
+      },
+      "agent_wallet": {
+        "address": "0xBBBBbbbbBBBBbbbbBBBBbbbbBBBBbbbbBBBBbbbb",
+        "chain_id": 84532,
+        "network": "base-sepolia",
+        "wallet_provider": "local",
+        "custody_mode": "agent_local"
+      }
+    },
+    "canonical": "{\"agent\":{\"display_name\":\"wallet-alpha\",\"mode\":\"external\"},\"agent_signer_address\":\"0xabc0000000000000000000000000000000000001\",\"agent_wallet\":{\"address\":\"0xbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"chain_id\":84532,\"custody_mode\":\"agent_local\",\"network\":\"base-sepolia\",\"wallet_provider\":\"local\"},\"capabilities\":{\"declared_artifact_lanes\":[\"onnx-browser-webgpu\"],\"declared_at_version\":\"v1\",\"declared_model_classes\":[\"encoder-text-small\"],\"declared_runtimes\":[\"onnxruntime-web-webgpu\"],\"optimization_methods\":[\"graph-optimization\"]},\"protocol_version\":\"v1\"}",
+    "hash": "sha256:4b6131c50ce283e21a41db9c1c07155a3ae6894af946313bca9f657582566c01"
+  }
+]
